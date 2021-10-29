@@ -1,10 +1,15 @@
 import './App.css';
+import CPU from './components/CPU';
 
 function App() {
   return (
-    <>
-    Hello
-    </>
+    <div className='dashboard-container'>
+    <CPU/>
+    <CPU/>
+    <CPU/>
+    <CPU/>
+    <CPU/>
+    </div>
   );
 }
 
