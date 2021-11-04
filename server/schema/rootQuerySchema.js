@@ -2,7 +2,7 @@ const graphql = require('graphql');
 import ClicksDataType from './clicksSchema';
 import LogsDataType from './logsSchema';
 import CPUDataType from './cpuSchema';
-import DiskIODataType from './disksSchema';
+import DiskIODataType from './disksIOSchema';
 import MemoryDataType from './memorySchema';
 
 const {
