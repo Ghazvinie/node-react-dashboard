@@ -3,6 +3,7 @@ const express = require('express');
 const { graphqlHTTP } = require('express-graphql');
 const testSchema = require('./schema/testSchema');
 const mongoose = require('mongoose');
+const si = require('systeminformation');
 
 const app = express();
 
@@ -15,6 +16,9 @@ mongoose.connect(process.env.DB_URI, { useNewUrlParser: true, useUnifiedTopology
   })
   .catch(error => console.log(error));
 
+  setInterval(() => {
+    si.disksIO().then(data => console.log(data))
+  },10000)
 
 app.use('/graphql', graphqlHTTP({
     schema: testSchema,
@@ -23,4 +27,4 @@ app.use('/graphql', graphqlHTTP({
 
 app.use('/', (req, res) => {
   res.json('hello')
-})
+}) 
