@@ -8,9 +8,6 @@ import MemoryDataType from './memorySchema';
 const {
     GraphQLObjectType,
     GraphQLString,
-    GraphQLID,
-    GraphQLInt,
-    GraphQLList,
     GraphQLSchema
 } = graphql;
 
