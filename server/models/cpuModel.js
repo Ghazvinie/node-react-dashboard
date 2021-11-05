@@ -6,4 +6,4 @@ const mongoCPUSchema = new Schema({
     avgLoad: Number,
 });
 
-module.exports = mongoose.model('CPU', mongoCPUSchema);
+module.exports = mongoose.model('SystemMetrics', mongoCPUSchema);

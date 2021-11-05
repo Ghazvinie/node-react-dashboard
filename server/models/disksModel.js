@@ -7,4 +7,4 @@ const mongoDisksIOSchema = new Schema({
     write: Number
 });
 
-module.exports = mongoose.model('Disks', mongoDisksIOSchema);
+module.exports = mongoose.model('SystemMetrics', mongoDisksIOSchema);

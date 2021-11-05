@@ -7,4 +7,4 @@ const mongoMemorySchema = new Schema({
     free: Number
 });
 
-module.exports = mongoose.model('Memory', mongoMemorySchema);
+module.exports = mongoose.model('SystemMetrics', mongoMemorySchema);

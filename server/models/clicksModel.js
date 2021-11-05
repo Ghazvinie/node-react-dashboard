@@ -6,4 +6,4 @@ const mongoClicksSchema = new Schema({
     total: Number,
 });
 
-module.exports = mongoose.model('CPU', mongoClicksSchema);
+module.exports = mongoose.model('SiteMetrics', mongoClicksSchema);

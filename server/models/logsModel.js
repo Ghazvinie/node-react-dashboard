@@ -9,4 +9,4 @@ const mongoLogsSchema = new Schema({
     stack: String,
 });
 
-module.exports = mongoose.model('Logs', mongoLogsSchema);
+module.exports = mongoose.model('SystemLogs', mongoLogsSchema);
