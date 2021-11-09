@@ -14,17 +14,17 @@ mongoose.connect(process.env.DB_URI, { useNewUrlParser: true, useUnifiedTopology
       console.log('Your app is listening on port ' + listener.address().port);
     });
   })
-  .catch(error => console.log(error));
+  .catch((error: unknown) => console.log(error));
 
-  setInterval(() => {
-    si.disksIO().then(data => console.log(data))
-  },10000)
+  // setInterval(() => {
+  //   si.disksIO().then(data => console.log(data))
+  // },10000)
 
 app.use('/graphql', graphqlHTTP({
     schema: testSchema,
     graphiql: true
 }));
 
-app.use('/', (req, res) => {
-  res.json('hello')
+app.use('/', (req: Request, res: Response):void => {
+  console.log('hello')
 }) 
