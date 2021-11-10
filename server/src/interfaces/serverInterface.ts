@@ -1,5 +1,5 @@
 export default interface ServerInterface {
     app: any,
-    port: number
+    port: string | number
     listen(): void
 };
