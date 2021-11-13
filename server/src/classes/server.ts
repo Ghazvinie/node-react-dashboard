@@ -1,4 +1,3 @@
-const express = require('express');
 import ServerInterface from '../interfaces/serverInterface';
 
 export default class Server implements ServerInterface {
