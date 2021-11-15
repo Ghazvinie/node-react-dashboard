@@ -1,13 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var express = require('express');
-var Server = /** @class */ (function () {
-    function Server(port, app) {
+var ServerClass = /** @class */ (function () {
+    function ServerClass(port, app) {
         this.port = port || 4000;
         this.app = app;
     }
     ;
-    Server.prototype.listen = function () {
+    ServerClass.prototype.listen = function () {
         var _this = this;
         try {
             this.app.listen(this.port, function () { return console.log("Server listening on " + _this.port); });
@@ -17,7 +16,10 @@ var Server = /** @class */ (function () {
         }
     };
     ;
-    return Server;
+    ServerClass.prototype.addMiddleWare = function (middleWare) {
+        this.app.use(middleWare);
+    };
+    return ServerClass;
 }());
-exports.default = Server;
 ;
+module.exports = { ServerClass: ServerClass };

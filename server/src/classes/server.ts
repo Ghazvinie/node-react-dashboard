@@ -1,6 +1,6 @@
 import ServerInterface from '../interfaces/serverInterface';
 
-export default class Server implements ServerInterface {
+class ServerClass implements ServerInterface {
     port: string | number;
     app: any;
 
@@ -16,5 +16,10 @@ export default class Server implements ServerInterface {
             console.log(error);
         }
     };
+
+    addMiddleWare(middleWare:any){
+        this.app.use(middleWare)
+    }
 };
 
+module.exports = {ServerClass};
