@@ -1,10 +1,12 @@
 const { graphqlHTTP } = require('express-graphql');
 const testSchema = require('../schema/testSchema');
+import ControllerInterface from "../interfaces/controllerInterface";
 
 
-class ControllerClass {
+module.exports = class ControllerClass implements ControllerInterface {
 
-    async getFunction(req: Request, res: Response) {
+   getFunction(req: Request, res: Response):void {
+       console.log('hell;o')
         res.json('helldo');
     };
 
@@ -13,7 +15,5 @@ class ControllerClass {
             schema: testSchema,
             graphiql: true
         });
-    }
-}
-
-module.exports = { Controller: ControllerClass }
+    };
+};

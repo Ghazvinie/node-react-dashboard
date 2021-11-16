@@ -1,19 +1,22 @@
 "use strict";
-// const { graphqlHTTP } = require('express-graphql');
-// const express = require('express');
-// const Router = express.Router();
-// export default class RouterClass {
-//     Router: any;
-//     constructor(Router: any){
-// this.Router = Router
-//     };
-//     // graphQLRoute(route: string, controller: any){
-//     //     console.log('hello')
-//     //     return this.Router.use(route, controller)
-//     // }
-//     // rootRoute(req:any, res:any, next:any){
-//     //     res.send('hello from root')
-//     // }
-//    Router.get()
-// }
-Router.get('/', function (req, res) { return res.send('hello'); });
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.RouterClass = void 0;
+var express = require('express');
+var Router = express.Router();
+var RouterClass = /** @class */ (function () {
+    function RouterClass(path) {
+        this.path = path;
+        this.routes = [];
+    }
+    ;
+    RouterClass.prototype.initRouter = function () {
+        return Router;
+    };
+    ;
+    RouterClass.prototype.useRoute = function (object) {
+        console.log('hje;;p');
+        Router.use("" + this.path + object.ext, function (req, res) { return object.controller(req, res); });
+    };
+    return RouterClass;
+}());
+exports.RouterClass = RouterClass;

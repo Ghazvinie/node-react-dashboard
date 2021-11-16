@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var ServerClass = /** @class */ (function () {
+module.exports = /** @class */ (function () {
     function ServerClass(port, app) {
         this.port = port || 4000;
         this.app = app;
@@ -19,7 +19,6 @@ var ServerClass = /** @class */ (function () {
     ServerClass.prototype.addMiddleWare = function (middleWare) {
         this.app.use(middleWare);
     };
+    ;
     return ServerClass;
 }());
-;
-module.exports = { ServerClass: ServerClass };
